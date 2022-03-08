@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,18 +15,15 @@
 # limitations under the License.
 #
 
--include device/bq/msm8937-common/BoardConfigCommon.mk
+-include device/samsung/msm8937-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/bq/tenshi
+DEVICE_PATH := device/samsung/j2y18lte
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := Aquaris_U_Plus,tenshi
+TARGET_OTA_ASSERT_DEVICE := SM-J250F,j2y18lte
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineage_tenshi_defconfig
-
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+TARGET_KERNEL_CONFIG := lineage_j2y18lte_defconfig
 
 # inherit from the proprietary version
--include vendor/bq/tenshi/BoardConfigVendor.mk
+-include vendor/samsung/j2y18lte/BoardConfigVendor.mk
