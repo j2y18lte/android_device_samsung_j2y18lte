@@ -23,7 +23,15 @@ DEVICE_PATH := device/samsung/j2y18lte
 TARGET_OTA_ASSERT_DEVICE := SM-J250F,j2y18lte
 
 # Kernel
-TARGET_KERNEL_CONFIG := lineage_j2y18lte_defconfig
+TARGET_KERNEL_CONFIG := j2y18lte_defconfig
+
+# Partition sizes
+BOARD_SYSTEMIMAGE_PARTITION_SIZE    := 3674210304
+BOARD_USERDATAIMAGE_PARTITION_SIZE  := 11643367424
+BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
+
+# RIL
+TARGET_HAS_DUALSIMS := true
 
 # inherit from the proprietary version
 -include vendor/samsung/j2y18lte/BoardConfigVendor.mk
