@@ -25,6 +25,7 @@
 
 #define LOG_TAG "CameraWrapper"
 #include <cutils/log.h>
+#include <string.h>
 
 #include <utils/threads.h>
 #include <utils/String8.h>
@@ -112,7 +113,26 @@ static char *camera_fixup_getparams(int id __unused, const char *settings)
     params.dump();
 #endif
 
-    // Stub
+    // Switching HDR can leave the vendor ISP without a preview stream.
+    const char *modes = params.get(CameraParameters::KEY_SUPPORTED_SCENE_MODES);
+    if (modes != nullptr) {
+        String8 supportedModes;
+        const char *hdr = CameraParameters::SCENE_MODE_HDR;
+        while (*modes != '\0') {
+            const size_t length = strcspn(modes, ",");
+            if (length != strlen(hdr) || strncmp(modes, hdr, length) != 0) {
+                if (!supportedModes.isEmpty()) {
+                    supportedModes.append(",");
+                }
+                supportedModes.append(modes, length);
+            }
+            modes += length;
+            if (*modes == ',') {
+                ++modes;
+            }
+        }
+        params.set(CameraParameters::KEY_SUPPORTED_SCENE_MODES, supportedModes.string());
+    }
 
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
@@ -134,6 +154,11 @@ static char *camera_fixup_setparams(int id, const char *settings)
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
 #endif
+
+    const char *sceneMode = params.get(CameraParameters::KEY_SCENE_MODE);
+    if (sceneMode != nullptr && strcmp(sceneMode, CameraParameters::SCENE_MODE_HDR) == 0) {
+        params.set(CameraParameters::KEY_SCENE_MODE, CameraParameters::SCENE_MODE_AUTO);
+    }
 
     params.set(CameraParameters::KEY_PREVIEW_FPS_RANGE, "7500,30000");
 
