@@ -42,9 +42,7 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
-vendor/lib/libaudiodevarb.so
 vendor/lib/libdrc.so
-vendor/lib/libhwdaphal.so
 vendor/lib/libqct_resampler.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib/libswvdec.so
@@ -75,7 +73,8 @@ etc/camera/s5k5e3yx_chromatix.xml
 etc/camera/s5k5e3yx_f2_2_chromatix.xml
 etc/camera/Y08QF_sr846_chromatix.xml
 etc/camera/Y08QF_sr846_module_info.xml
-lib/hw/camera.vendor.msm8937.so
+lib/hw/camera.msm8937.so:lib/hw/camera.vendor.msm8937.so
+lib/libsecnativefeature.so
 lib/libalawb_algo.so
 lib/libmmcamera2_is.so
 lib/libmmcamera2_q3a_core.so
@@ -430,6 +429,9 @@ etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
 etc/permissions/izat.xt.srv.xml
 lib/libloc_api_v02.so
+lib/hw/gps.default.so
+lib/libgps.utils.so
+lib/libloc_pla.so
 lib/libloc_core.so
 lib/libloc_eng.so
 vendor/lib/hw/flp.default.so
@@ -538,7 +540,6 @@ lib/hw/lights.msm8937.so
 
 # Listen
 vendor/lib/libadpcmdec.so
-vendor/lib/libsmwrapper.so
 
 # Media
 etc/firmware/DE.o.msm8937

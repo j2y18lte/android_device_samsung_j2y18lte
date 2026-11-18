@@ -94,17 +94,6 @@ vidc.disable.split.mode=1
 vidc.dec.downscalar_width=1920
 vidc.dec.downscalar_height=1088
 
-# NITZ
-persist.rild.nitz_plmn=
-persist.rild.nitz_long_ons_0=
-persist.rild.nitz_long_ons_1=
-persist.rild.nitz_long_ons_2=
-persist.rild.nitz_long_ons_3=
-persist.rild.nitz_short_ons_0=
-persist.rild.nitz_short_ons_1=
-persist.rild.nitz_short_ons_2=
-persist.rild.nitz_short_ons_3=
-
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.at_library=libqti-at.so

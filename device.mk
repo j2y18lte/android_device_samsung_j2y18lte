@@ -118,6 +118,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml
 
+include $(J2Y18LTE_DEVICE_PATH)/product/camera.mk
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8937 \
@@ -133,14 +135,7 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
-# GPS
-PRODUCT_COPY_FILES += \
-    $(J2Y18LTE_DEVICE_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
-    $(J2Y18LTE_DEVICE_PATH)/gps/etc/gps.conf:system/etc/gps.conf \
-    $(J2Y18LTE_DEVICE_PATH)/gps/etc/izat.conf:system/etc/izat.conf \
-    $(J2Y18LTE_DEVICE_PATH)/gps/etc/lowi.conf:system/etc/lowi.conf \
-    $(J2Y18LTE_DEVICE_PATH)/gps/etc/sap.conf:system/etc/sap.conf \
-    $(J2Y18LTE_DEVICE_PATH)/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
+include $(J2Y18LTE_DEVICE_PATH)/product/gps.mk
 
 # IPA Manager
 PRODUCT_PACKAGES += \
@@ -205,6 +200,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
+    init.rilchip.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
@@ -214,11 +210,7 @@ PRODUCT_PACKAGES += \
     init.qcom.fm.sh \
     init.qcom.post_boot.sh
 
-# RIL
-PRODUCT_PACKAGES += \
-    librmnetctl \
-    libcnefeatureconfig \
-    libxml2
+include $(J2Y18LTE_DEVICE_PATH)/product/ril.mk
 
 # Sensors
 PRODUCT_PACKAGES += \
