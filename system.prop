@@ -137,7 +137,6 @@ ro.multisim.set_audio_params=true
 ro.telephony.ril.config=simactivation
 rild.libpath=/system/lib/libsec-ril.so
 rild.libpath2=/system/lib/libsec-ril-dsds.so
-ro.telephony.ril_class=msm8937RIL
 
 # Time Services
 persist.timed.enable=true

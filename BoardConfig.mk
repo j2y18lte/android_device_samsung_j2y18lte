@@ -70,6 +70,9 @@ BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
+# OTA
+TARGET_OTA_ASSERT_DEVICE := j2y18lte
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8937
 TARGET_NO_BOOTLOADER := true
@@ -117,9 +120,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 USE_DEVICE_SPECIFIC_GPS := true
 TARGET_NO_RPC := true
 
-#Include path
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
-
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm8917
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
@@ -161,7 +161,6 @@ USE_SENSOR_MULTI_HAL := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 
 
 # Wi-Fi
@@ -174,8 +173,8 @@ BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
-WIFI_DRIVER_MODULE_NAME := "wlan"
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
+BOARD_HAVE_SAMSUNG_WIFI := true
+# Prima is built into the kernel (CONFIG_PRONTO_WLAN=y).
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
