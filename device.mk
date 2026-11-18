@@ -186,7 +186,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.msm8937
+    power.j2y18lte
 
 # QMI
 PRODUCT_PACKAGES += \
