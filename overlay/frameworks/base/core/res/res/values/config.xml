@@ -72,11 +72,6 @@
         <item>255</item>
     </integer-array>
  
-    <!-- The RadioAccessFamilies supported by the device.
-         Empty is viewed as "all".  Only used on devices which
-         don't support RIL_REQUEST_GET_RADIO_CAPABILITY
-         format is UMTS|LTE|... -->
-    <string translatable="false" name="config_radio_access_family">LTE|CDMA|EVDO|GSM|WCDMA</string>
 
     <!-- Enables or disables fading edges when marquee is enabled in TextView. -->
     <bool name="config_ui_enableFadingMarquee">false</bool>
@@ -147,9 +142,6 @@
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">false</bool>
 
-    <!-- Flag indicating whether we should enable the automatic brightness in Settings.
-         config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
-    <bool name="config_automatic_brightness_available">true</bool>
 
    <!-- Configure mobile tcp buffer sizes in the form:
          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
@@ -293,4 +285,10 @@
     <!-- Package name providing fused location support. Used only when
          config_enableFusedLocationOverlay is false. -->
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
+
+    <!-- Home, Back, Recents and volume rocker. Only Home wakes the device. -->
+    <integer name="config_deviceHardwareKeys">83</integer>
+    <integer name="config_deviceHardwareWakeKeys">1</integer>
+    <integer name="config_longPressOnAppSwitchBehavior">1</integer>
+    <integer name="config_doubleTapOnHomeBehavior">0</integer>
 </resources>

@@ -185,10 +185,6 @@ case "$target" in
 	;;
 esac
 
-# check configfs is mounted or not
-#if [ -d /config/usb_gadget ]; then
-#	setprop sys.usb.configfs 1
-#fi
 
 #
 # Do target specific things
