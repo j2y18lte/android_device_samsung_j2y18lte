@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remove-project name="LineageOS/android_hardware_qcom_audio"
+                    path="hardware/qcom/audio-caf/msm8996" />
+    <project name="j2y18lte/android_hardware_qcom_audio"
+             path="hardware/qcom/audio-caf/msm8996"
+             remote="github" revision="refs/heads/cm-14.1-j2y18lte" groups="qcom,qcom_audio" />
+</manifest>

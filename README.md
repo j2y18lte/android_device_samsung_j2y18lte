@@ -26,3 +26,15 @@ Front Camera | 5 MP, f/2.2, LED flash
 ## Device picture
 
 ![J250F/DS](https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-j2-sm-j250-0.jpg "J250F/DS")
+
+## CM 14.1 audio HAL
+
+From the Android source root, install the local manifest and sync the audio HAL
+before building. The J250F uses this CAF branch for Samsung dual-SIM VoiceMMode
+call audio.
+
+```sh
+mkdir -p .repo/local_manifests
+cp device/samsung/j2y18lte/cm-14.1-audio.xml .repo/local_manifests/
+repo sync hardware/qcom/audio-caf/msm8996
+```
