@@ -1,0 +1,10 @@
+# SM-J250F recovery volumes, using the J250FXXS2ATI1 partition layout.
+# block device                          mount point   fs type    mount flags    fs_mgr flags
+/dev/block/bootdevice/by-name/boot       /boot         emmc       defaults       recoveryonly
+/dev/block/bootdevice/by-name/recovery   /recovery     emmc       defaults       recoveryonly
+/dev/block/bootdevice/by-name/system     /system       ext4       defaults       recoveryonly
+/dev/block/bootdevice/by-name/userdata   /data         ext4       defaults       wait,length=-16384
+/dev/block/bootdevice/by-name/cache      /cache        ext4       defaults       recoveryonly
+/dev/block/mmcblk1p1                     /sdcard       vfat       defaults       recoveryonly
+/dev/block/bootdevice/by-name/efs        /efs          ext4       defaults       recoveryonly
+/dev/block/bootdevice/by-name/misc       /misc         emmc       defaults       recoveryonly

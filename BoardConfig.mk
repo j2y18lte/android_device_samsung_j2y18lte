@@ -158,7 +158,7 @@ TARGET_RIL_VARIANT := caf
 BOARD_PROVIDES_LIBRIL := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery.fstab
 
 # Sensor
 USE_SENSOR_MULTI_HAL := true
