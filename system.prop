@@ -96,6 +96,7 @@ vidc.dec.downscalar_height=1088
 
 # Perf
 ro.hardware.power=j2y18lte
+ro.hardware.vibrator=j2y18lte
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.at_library=libqti-at.so
 ro.vendor.gt_library=libqti-gt.so

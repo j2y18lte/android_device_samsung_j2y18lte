@@ -187,6 +187,9 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     power.j2y18lte
+# Vibrator
+PRODUCT_PACKAGES += \
+    vibrator.j2y18lte
 
 # QMI
 PRODUCT_PACKAGES += \
